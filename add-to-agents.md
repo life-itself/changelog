@@ -1,6 +1,6 @@
 ## Changelog
 
-This repo keeps a `CHANGELOG.md` (dated entries, newest first). At the end
+This repo keeps a `changelog.md` (dated entries, newest first). At the end
 of a work session, if something worth recording actually shipped — skip
 trivial sessions (typo fixes, dead ends, no visible outcome) — draft a
 dated entry. Screenshots go in `changelog/images/`, embedded inline, if

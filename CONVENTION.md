@@ -6,7 +6,7 @@ The short version that goes into a repo's `AGENTS.md` lives in its own file, [ad
 
 ## File
 
-One `CHANGELOG.md` at the repo root. Dated entries, newest first — not version-numbered releases, since most of these repos ship continuously rather than cutting formal releases. If a repo *does* do versioned releases, use `## [1.2.0] - 2026-08-15` instead of a bare date; otherwise use the date alone.
+One `changelog.md` at the repo root. Dated entries, newest first — not version-numbered releases, since most of these repos ship continuously rather than cutting formal releases. If a repo *does* do versioned releases, use `## [1.2.0] - 2026-08-15` instead of a bare date; otherwise use the date alone.
 
 ```markdown
 ## 2026-08-15 — Short title
@@ -23,7 +23,7 @@ One or two sentences, written for a reader, not a raw commit-message dump.
 
 ## Images
 
-`changelog/images/YYYY-MM-DD-slug.png` (or `.mp4`/`.mov` for a short video) inside the project's **own** repo — not a separate changelog repo. Plain git commit; no external hosting for v1. Referenced inline from the `CHANGELOG.md` entry via a relative path, as above.
+`changelog/images/YYYY-MM-DD-slug.png` (or `.mp4`/`.mov` for a short video) inside the project's **own** repo — not a separate changelog repo. Plain git commit; no external hosting for v1. Referenced inline from the `changelog.md` entry via a relative path, as above.
 
 No mandatory before/after pairing — just grab whatever's compelling in the moment (usually the "after"/current state). If a reader wants the comparison, the previous entry's image is already sitting right above the new one in the same file.
 
@@ -34,7 +34,7 @@ At session-checkpoint time (end of a work session / handoff point) — the same 
 **Skip the entry if the session was trivial** — a typo fix, a failed experiment, pure research/reading, config fiddling with no visible outcome. Write one only when something a reader would actually care about shipped: a feature, a fix, a meaningful piece of content, a visible change. When genuinely unsure, err toward skipping rather than logging noise — a changelog that's mostly filler stops getting read.
 
 1. Did something changelog-worthy ship this session? (See threshold above — not every commit, not every session.)
-2. If yes: draft a dated entry, prepend it to `CHANGELOG.md`.
+2. If yes: draft a dated entry, prepend it to `changelog.md`.
 3. If something visual shipped: grab a screenshot/short video at the same moment, commit it to `changelog/images/`, embed it in the entry.
 
 AI drafts the entry from what actually happened in the session; a human skims/edits before it's committed — light curation, not writing from scratch.
@@ -46,5 +46,5 @@ Committing the entry to the project's own repo is the automatic, no-decision flo
 ## Not doing yet
 
 - No image hosting (R2 or otherwise) — plain git until volume makes that painful.
-- No automated weekly-roll-up script pulling from every project's `CHANGELOG.md` — do that by hand first.
+- No automated weekly-roll-up script pulling from every project's `changelog.md` — do that by hand first.
 - No auto-posting to social media — promotion is always a manual step.
