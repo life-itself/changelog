@@ -6,9 +6,9 @@ updated: 2026-08-16
 
 - **Project:** Changelog Convention
 - **State:** ready
-- **Next:** Trial the convention end-to-end on `wilber-wiki` — install the AGENTS.md snippet, produce one real entry.
-- **Context:** [MOTIVATION.md](MOTIVATION.md) for the full situation/complication/question/hypothesis; [CONVENTION.md](CONVENTION.md) and [add-to-agents.md](add-to-agents.md) are the current spec. Nothing has actually used this yet — everything so far is design, not a real run.
-- **Issue:** [#1 Trial the convention end-to-end on wilber-wiki](https://github.com/life-itself/changelog/issues/1)
+- **Next:** Produce one real `changelog.md` entry (in `reasoncommons`, where the snippet's already installed, or any other repo carrying it) to complete the trial — bootstrap install is confirmed working, but nothing's used it yet.
+- **Context:** [MOTIVATION.md](MOTIVATION.md) for the full situation/complication/question/hypothesis; [CONVENTION.md](CONVENTION.md) and [add-to-agents.md](add-to-agents.md) are the current spec. Bootstrap confirmed working 2026-08-16: `life-itself/reasoncommons` AGENTS.md now carries the snippet verbatim (commit `ea7bc2e`), matching `add-to-agents.md` exactly.
+- **Issue:** [#1 Trial the convention end-to-end on a real repo](https://github.com/life-itself/changelog/issues/1)
 - **Updated:** 2026-08-16
 
 ## Backlog
