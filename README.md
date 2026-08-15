@@ -11,7 +11,8 @@ That's it — the whole file at that URL is exactly what gets added, nothing to 
 ## Files
 
 - **[add-to-agents.md](add-to-agents.md)** — the short snippet, verbatim content for a repo's `AGENTS.md`. States what a changelog entry is and when to write one (skip trivial sessions), and only points to `CONVENTION.md` for the actual first entry or when the format's unclear — so a session never has to fetch the full spec just to decide whether to bother.
-- **[CONVENTION.md](CONVENTION.md)** — the full spec: file format, image handling, publishing rule.
+- **[CONVENTION.md](CONVENTION.md)** — the full per-entry spec: file format, image handling, the skip/weight judgment calls. This is what a project-repo agent reads. Deliberately doesn't cover what happens to entries afterward.
+- **[PUBLISHING.md](PUBLISHING.md)** — the separate, much-less-frequent concern of aggregating entries across projects: weekly roll-up and manual promote (social/newsletter/site). Read by the planning repo's `changelog-rollup` skill, not by a project-repo session — kept out of `CONVENTION.md` on purpose so drafting one entry never pulls this in.
 - **[MOTIVATION.md](MOTIVATION.md)** — the full situation/complication/question/hypothesis behind why this repo and this spec exist, self-contained (no need to check out the planning repo to follow the reasoning).
 - **[NEXT.md](NEXT.md)** — current checkpoint and backlog; links the open GitHub issues.
 
