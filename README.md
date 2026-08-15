@@ -2,15 +2,36 @@
 
 The canonical spec for how repos keep a changelog — text and visual, one file, one trigger. Meant to be pointed to from any repo's `AGENTS.md`/`CLAUDE.md`, not copied in full or auto-loaded every session — an AI only fetches it when a changelog task actually comes up.
 
-## Add this to a repo's AGENTS.md
+## Bootstrap prompt — paste this into an AI session in the target repo
 
-Copy-paste, one line, done:
+This is the thing to actually copy-paste — into Claude Code, Codex, whatever — and let it do the file edit, rather than hand-editing AGENTS.md yourself:
 
-```markdown
-Changelog: read https://raw.githubusercontent.com/life-itself/changelog/main/CONVENTION.md and follow it at the end of a work session.
+```
+Add a changelog convention to this repo. Fetch
+https://raw.githubusercontent.com/life-itself/changelog/main/CONVENTION.md
+and read it, then add a "## Changelog" section to this repo's AGENTS.md
+(create AGENTS.md if it doesn't exist) that: states this repo keeps a
+CHANGELOG.md with dated entries, newest first; says entries get drafted at
+the end of a work session, but only when something worth recording actually
+shipped — skip trivial sessions; notes screenshots go in changelog/images/
+and get embedded inline; and links to the CONVENTION.md URL above for the
+full format rather than repeating it. Keep the section to a handful of
+lines — the URL is the source of truth.
 ```
 
-That's the raw file URL, not the GitHub web page — it returns plain markdown directly, no HTML around it, so any fetch tool (or a straight `curl`) gets the spec in one shot: `curl -s https://raw.githubusercontent.com/life-itself/changelog/main/CONVENTION.md`. Works the same from a local session, a cloud session, or Codex — no local checkout of any repo required, and no GitHub auth needed since this repo is public.
+If you'd rather hand-edit AGENTS.md yourself, the section it produces looks roughly like this:
+
+```markdown
+## Changelog
+
+This repo keeps a `CHANGELOG.md` (dated entries, newest first; screenshots
+in `changelog/images/`, embedded inline when something visual shipped). At
+the end of a work session where something worth recording actually shipped
+— skip trivial sessions — draft a dated entry. Full format:
+https://raw.githubusercontent.com/life-itself/changelog/main/CONVENTION.md
+```
+
+Either way it's the raw file URL, not the GitHub web page — plain markdown in one fetch, no HTML wrapper, works the same from a local session, a cloud session, or Codex, no checkout or auth needed since this repo is public.
 
 ## Spec
 

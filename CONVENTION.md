@@ -23,11 +23,15 @@ One or two sentences, written for a reader, not a raw commit-message dump.
 
 `changelog/images/YYYY-MM-DD-slug.png` (or `.mp4`/`.mov` for a short video) inside the project's **own** repo — not a separate changelog repo. Plain git commit; no external hosting for v1. Referenced inline from the `CHANGELOG.md` entry via a relative path, as above.
 
+No mandatory before/after pairing — just grab whatever's compelling in the moment (usually the "after"/current state). If a reader wants the comparison, the previous entry's image is already sitting right above the new one in the same file.
+
 ## Trigger
 
-At session-checkpoint time (end of a work session / handoff point) — the same moment a `NEXT.md` update happens in repos that use one. Draft the entry as a standard step then, not as a separate remembered task:
+At session-checkpoint time (end of a work session / handoff point) — the same moment a `NEXT.md` update happens in repos that use one.
 
-1. Did something changelog-worthy happen this session? (A shipped chunk of work, not every commit.)
+**Skip the entry if the session was trivial** — a typo fix, a failed experiment, pure research/reading, config fiddling with no visible outcome. Write one only when something a reader would actually care about shipped: a feature, a fix, a meaningful piece of content, a visible change. When genuinely unsure, err toward skipping rather than logging noise — a changelog that's mostly filler stops getting read.
+
+1. Did something changelog-worthy ship this session? (See threshold above — not every commit, not every session.)
 2. If yes: draft a dated entry, prepend it to `CHANGELOG.md`.
 3. If something visual shipped: grab a screenshot/short video at the same moment, commit it to `changelog/images/`, embed it in the entry.
 
