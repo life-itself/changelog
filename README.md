@@ -12,6 +12,8 @@ That's it — the whole file at that URL is exactly what gets added, nothing to 
 
 - **[add-to-agents.md](add-to-agents.md)** — the short snippet, verbatim content for a repo's `AGENTS.md`. States what a changelog entry is and when to write one (skip trivial sessions), and only points to `CONVENTION.md` for the actual first entry or when the format's unclear — so a session never has to fetch the full spec just to decide whether to bother.
 - **[CONVENTION.md](CONVENTION.md)** — the full spec: file format, image handling, publishing rule.
+- **[MOTIVATION.md](MOTIVATION.md)** — the full situation/complication/question/hypothesis behind why this repo and this spec exist, self-contained (no need to check out the planning repo to follow the reasoning).
+- **[NEXT.md](NEXT.md)** — current checkpoint and backlog; links the open GitHub issues.
 
 ## Why not published elsewhere
 
@@ -19,7 +21,7 @@ Considered Flowershow / a public website for this, but the actual consumer is an
 
 ## Source docs
 
-Motivation and decisions: `~/src/me/planning/projects/2026-central-visual-changelog.md` and `~/src/me/planning/projects/2026-central-visual-changelog/scqh.md`, and the parent `~/src/me/planning/initiatives/changelog-for-me/scqh.md`.
+The planning repo (`~/src/me/planning`) keeps its own copy of the motivation docs too — `projects/2026-central-visual-changelog.md` / `scqh.md`, and `initiatives/changelog-for-me/scqh.md`. `MOTIVATION.md` here is the same content, consolidated so this repo doesn't depend on that one being checked out.
 
 ## History
 
