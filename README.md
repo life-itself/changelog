@@ -4,34 +4,18 @@ The canonical spec for how repos keep a changelog — text and visual, one file,
 
 ## Bootstrap prompt — paste this into an AI session in the target repo
 
-This is the thing to actually copy-paste — into Claude Code, Codex, whatever — and let it do the file edit, rather than hand-editing AGENTS.md yourself:
-
 ```
-Add a changelog convention to this repo. Fetch
-https://raw.githubusercontent.com/life-itself/changelog/main/CONVENTION.md
-and read it, then add a "## Changelog" section to this repo's AGENTS.md
-(create AGENTS.md if it doesn't exist) that: states this repo keeps a
-CHANGELOG.md with dated entries, newest first; says entries get drafted at
-the end of a work session, but only when something worth recording actually
-shipped — skip trivial sessions; notes screenshots go in changelog/images/
-and get embedded inline; and links to the CONVENTION.md URL above for the
-full format rather than repeating it. Keep the section to a handful of
-lines — the URL is the source of truth.
+Read https://raw.githubusercontent.com/life-itself/changelog/main/CONVENTION.md
+and copy the block from its "Copy this into AGENTS.md" section into this
+repo's AGENTS.md verbatim (create AGENTS.md if it doesn't exist). Don't
+paraphrase or summarise it — copy it exactly as written.
 ```
 
-If you'd rather hand-edit AGENTS.md yourself, the section it produces looks roughly like this:
+No composing required — the agent fetches one file, finds one clearly marked block, pastes it in unchanged. That's deliberate: every repo ends up with byte-identical instructions instead of each session's own interpretation, and installing the pointer never requires actually reading/understanding the rest of the spec — only the block itself, which is short by design.
 
-```markdown
-## Changelog
+Prefer to do it yourself by hand? Open [CONVENTION.md](CONVENTION.md#copy-this-into-agentsmd) and copy the same block — there's only the one copy of it, in that file, so nothing here duplicates or can drift from it.
 
-This repo keeps a `CHANGELOG.md` (dated entries, newest first; screenshots
-in `changelog/images/`, embedded inline when something visual shipped). At
-the end of a work session where something worth recording actually shipped
-— skip trivial sessions — draft a dated entry. Full format:
-https://raw.githubusercontent.com/life-itself/changelog/main/CONVENTION.md
-```
-
-Either way it's the raw file URL, not the GitHub web page — plain markdown in one fetch, no HTML wrapper, works the same from a local session, a cloud session, or Codex, no checkout or auth needed since this repo is public.
+It's the raw file URL, not the GitHub web page — plain markdown in one fetch, no HTML wrapper, works the same from a local session, a cloud session, or Codex, no checkout or auth needed since this repo is public.
 
 ## Spec
 
