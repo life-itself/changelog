@@ -1,29 +1,19 @@
 # Changelog Convention
 
-The canonical spec for how repos keep a changelog — text and visual, one file, one trigger. Meant to be pointed to from any repo's `AGENTS.md`/`CLAUDE.md`, not copied in full or auto-loaded every session — an AI only fetches it when a changelog task actually comes up.
+Copy this into your coding agent:
 
-## Bootstrap prompt — paste this into an AI session in the target repo
+> Go to https://raw.githubusercontent.com/life-itself/changelog/main/add-to-agents.md and add its content to this repo's AGENTS.md (create AGENTS.md if it doesn't exist).
 
-```
-Read https://raw.githubusercontent.com/life-itself/changelog/main/CONVENTION.md
-and copy the block from its "Copy this into AGENTS.md" section into this
-repo's AGENTS.md verbatim (create AGENTS.md if it doesn't exist). Don't
-paraphrase or summarise it — copy it exactly as written.
-```
+That's it — the whole file at that URL is exactly what gets added, nothing to find or extract inside a bigger doc, nothing to paraphrase. It's the raw file URL, not the GitHub web page, so it's plain markdown in one fetch: works the same from a local session, a cloud session, or Codex, no checkout or auth needed since this repo is public.
 
-No composing required — the agent fetches one file, finds one clearly marked block, pastes it in unchanged. That's deliberate: every repo ends up with byte-identical instructions instead of each session's own interpretation, and installing the pointer never requires actually reading/understanding the rest of the spec — only the block itself, which is short by design.
+## Files
 
-Prefer to do it yourself by hand? Open [CONVENTION.md](CONVENTION.md#copy-this-into-agentsmd) and copy the same block — there's only the one copy of it, in that file, so nothing here duplicates or can drift from it.
-
-It's the raw file URL, not the GitHub web page — plain markdown in one fetch, no HTML wrapper, works the same from a local session, a cloud session, or Codex, no checkout or auth needed since this repo is public.
-
-## Spec
-
-[CONVENTION.md](CONVENTION.md)
+- **[add-to-agents.md](add-to-agents.md)** — the short snippet, verbatim content for a repo's `AGENTS.md`. States what a changelog entry is and when to write one (skip trivial sessions), and only points to `CONVENTION.md` for the actual first entry or when the format's unclear — so a session never has to fetch the full spec just to decide whether to bother.
+- **[CONVENTION.md](CONVENTION.md)** — the full spec: file format, image handling, publishing rule.
 
 ## Why not published elsewhere
 
-Considered Flowershow / a public website for this, but the actual consumer is an AI agent fetching one plain-text file, not a human browsing a site — the raw GitHub URL already does that, is already public, and needed zero extra setup. Revisit only if this doc needs to be human-browsable or search-discoverable as content in its own right, not as a pointer target.
+Considered Flowershow / a public website for this, but the actual consumer is an AI agent fetching a plain-text file, not a human browsing a site — the raw GitHub URL already does that, is already public, and needed zero extra setup. Revisit only if this doc needs to be human-browsable or search-discoverable as content in its own right, not as a pointer target.
 
 ## Source docs
 

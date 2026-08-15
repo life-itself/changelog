@@ -2,21 +2,7 @@
 
 How any repo keeps a changelog — text and visual, same file, same trigger. Quick-and-dirty v1: meant to be trialed and revised, not final.
 
-## Copy this into AGENTS.md
-
-This exact block, verbatim, no paraphrasing — the point is every repo ends up with identical instructions, not each agent's own summary of this doc. It's short enough that a session never needs to fetch the rest of this file just to decide *whether* to write an entry — only when it's actually about to write one, or the format is unclear.
-
-```markdown
-## Changelog
-
-This repo keeps a `CHANGELOG.md` (dated entries, newest first). At the end
-of a work session, if something worth recording actually shipped — skip
-trivial sessions (typo fixes, dead ends, no visible outcome) — draft a
-dated entry. Screenshots go in `changelog/images/`, embedded inline, if
-something visual shipped. First time writing an entry in this repo, or if
-the format is unclear: fetch and follow
-https://raw.githubusercontent.com/life-itself/changelog/main/CONVENTION.md
-```
+The short version that goes into a repo's `AGENTS.md` lives in its own file, [add-to-agents.md](add-to-agents.md) — copy its whole content in, don't paraphrase this longer doc. This file is the full spec that snippet points to once an entry's actually being drafted.
 
 ## File
 
