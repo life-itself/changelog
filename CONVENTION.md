@@ -81,6 +81,22 @@ finished project rather than a workspace.
 
 Committing the entry to the project's own repo is the automatic, no-decision floor — it always happens, no destination choice required. Anything beyond that (a personal/org site, a weekly review, social media, a newsletter) is always a **manual promote**, never automatic — see `~/src/me/planning/initiatives/changelog-for-me/scqh.md` for the fuller reasoning.
 
+### Weekly roll-up (v1) — [issue #2](https://github.com/life-itself/changelog/issues/2)
+
+Fully AI-assisted-on-demand, no script, folded into the weekly review the human already writes in the planning repo's `week/YYYY-MM-DD.md`:
+
+- **Discovery:** read `~/src/me/planning/projects/*.md` frontmatter for a `github:` URL, filtered to non-`done`/non-archived `status:`. That's "every active project."
+- **Reading each changelog:** local checkouts only for v1 — if a project's repo isn't checked out, it's skipped (a known v1 gap, not silently wrong: worth a `git clone` before the roll-up if a given project matters that week). No remote-API fetching yet.
+- **Output:** when doing the weekly review, ask the AI to draft a "This week across projects" section from that week's dated entries in each active project's `changelog.md` (text + any embedded images), appended into the existing `week/YYYY-MM-DD.md`. Human edits before it counts as done — same light-curation model as a single project's entry.
+- **Where it lives:** nowhere new — it's a step in the existing weekly-review session, described here rather than as a separate script/repo.
+
+### Manual promote (v1) — [issue #3](https://github.com/life-itself/changelog/issues/3)
+
+- **Flag marker:** an entry worth promoting gets a trailing `<!-- promote -->` HTML comment (invisible when rendered) added at drafting time — by the AI if it judges the entry promotion-worthy (visual entries are the default strong candidates, per `MOTIVATION.md`), confirmed or added by the human. The weekly roll-up scans for that marker instead of re-reading every entry to decide.
+- **Social:** AI drafts a caption from a flagged entry (using its image if it has one), human approves and posts by hand. No auto-posting, no queue — v1 is just "AI drafts, human pastes it in."
+- **Site:** there's no dedicated personal/Life Itself site to promote to yet beyond each project's own repo/Flowershow page. Until one exists, "promote to site" is out of scope — revisit once rufuspollock.com or a Life Itself channel is real.
+- **Newsletter:** a manual curation step layered on top of the weekly roll-up (issue #2), not automatic from it — after the roll-up drafts `week/YYYY-MM-DD.md`, the human picks flagged/notable items from it for the ~2000-person newsletter. Same roll-up, second manual pass, higher bar.
+
 ## Not doing yet
 
 - No image hosting (R2 or otherwise) — plain git until volume makes that painful.
