@@ -39,6 +39,44 @@ At session-checkpoint time (end of a work session / handoff point) — the same 
 
 AI drafts the entry from what actually happened in the session; a human skims/edits before it's committed — light curation, not writing from scratch.
 
+## Calibrating detail
+
+The failure mode in practice isn't "logged something trivial" (the Trigger threshold above catches that) — it's **logging something real at the wrong weight**. A repo-gardening session (rebrand, tidy the README, reorganize a folder) genuinely shipped something, so it clears the skip threshold, but it's not a feature — it doesn't deserve a title plus five bullets walking through every file touched. Match the entry's weight to what a reader outside the session would actually care about, not to how much work it took or how many files changed:
+
+- **A real feature, fix, or piece of content** (something a user or reader would notice): title, one or two sentences written for a reader, screenshot/video if something visual shipped. This is the only tier that gets an image.
+- **Small but real stuff** (internal cleanup, rename, reorg, tidying, small fixes with no user-visible behavior change): one plain sentence, no title needed, no bullets, no screenshot. If several small things happened in one session, that's still one sentence combining them — not a bullet per thing.
+- **Nothing worth a reader's attention:** skip it, per Trigger above.
+
+Don't let the entry mirror the session's internal structure — the reader doesn't care that branding, the README, and a folder reorg were three separate steps; they care that the site got tidied up. Describe the outcome, not the implementation. If you're drafting bullets that name specific files, config keys, or "moved X into Y" — stop and ask whether that's release-note material or just commit-message detail that belongs in `git log`, not `changelog.md`.
+
+**Before/after, from a real session:**
+
+```markdown
+<!-- Before: implementation-log style, five bullets naming files and internal moves -->
+## 2026-08-16 — Repo gardening: Reason Commons branding, clean landing page, tidy explainers
+
+A housekeeping session with no new content, but the site now looks like a project
+rather than a workspace...
+
+- **Rebranded to Reason Commons.** Site title and README header still said "Issue
+  Trees & Logical Thinking Process"; both now match the naming decision recorded in
+  `docs/brand-and-domain-naming.md`. Stale links to the old repo name were fixed
+  across `config.json`, the dashboard manifest and the skill docs.
+- **README is a landing page now.** ...
+- **`explainers/` reorganised.** ...
+- **Root docs lowercased** ...
+- **Two working conventions recorded in `AGENTS.md`** ...
+```
+
+```markdown
+<!-- After: one sentence, reader's-eye view of what changed -->
+## 2026-08-16 — Repo gardening
+
+Rebranded to Reason Commons, turned the README into a real landing page, and tidied
+the explainers folder and docs — no new content, but the site now reads as a
+finished project rather than a workspace.
+```
+
 ## Publishing
 
 Committing the entry to the project's own repo is the automatic, no-decision floor — it always happens, no destination choice required. Anything beyond that (a personal/org site, a weekly review, social media, a newsletter) is always a **manual promote**, never automatic — see `~/src/me/planning/initiatives/changelog-for-me/scqh.md` for the fuller reasoning.

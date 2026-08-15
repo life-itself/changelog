@@ -5,10 +5,11 @@ updated: 2026-08-16
 ## Current checkpoint
 
 - **Project:** Changelog Convention
-- **State:** ready
-- **Next:** Produce one real `changelog.md` entry (in `reasoncommons`, where the snippet's already installed, or any other repo carrying it) to complete the trial — bootstrap install is confirmed working, but nothing's used it yet.
-- **Context:** [MOTIVATION.md](MOTIVATION.md) for the full situation/complication/question/hypothesis; [CONVENTION.md](CONVENTION.md) and [add-to-agents.md](add-to-agents.md) are the current spec. Bootstrap confirmed working 2026-08-16: `life-itself/reasoncommons` AGENTS.md now carries the snippet verbatim (commit `ea7bc2e`), matching `add-to-agents.md` exactly.
-- **Issue:** [#1 Trial the convention end-to-end on a real repo](https://github.com/life-itself/changelog/issues/1)
+- **State:** trialed, one revision made
+- **Next:** Watch the next few real entries (in `reasoncommons` or elsewhere) to see if the calibration fix below actually holds, or if the spec needs another pass.
+- **Context:** [MOTIVATION.md](MOTIVATION.md) for the full situation/complication/question/hypothesis; [CONVENTION.md](CONVENTION.md) and [add-to-agents.md](add-to-agents.md) are the current spec. Bootstrap confirmed working 2026-08-16: `life-itself/reasoncommons` AGENTS.md carries the snippet verbatim (commit `ea7bc2e`).
+- **Trial finding (2026-08-16):** the real entries produced in `reasoncommons` were too verbose for what they reported — a repo-gardening session (rebrand, README tidy, folder reorg) got a full title plus five bullets naming individual files, when the actual reader-facing news was one sentence. The spec had a skip/don't-skip threshold but no guidance on *weight* once something clears that bar. Added a "Calibrating detail" section to `CONVENTION.md` (three tiers: skip / one-liner / full feature entry, with a before/after example) and folded a shorter version into `add-to-agents.md`. Retrofitted the reasoncommons AGENTS.md copy and condensed its 2026-08-16 changelog entry as the worked example.
+- **Issue:** [#1 Trial the convention end-to-end on a real repo](https://github.com/life-itself/changelog/issues/1) — entries now exist; worth a comment/close, left for a human since it's a shared GitHub issue.
 - **Updated:** 2026-08-16
 
 ## Backlog
