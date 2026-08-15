@@ -2,7 +2,9 @@
 
 Copy this into your coding agent:
 
-> Go to https://raw.githubusercontent.com/life-itself/changelog/main/add-to-agents.md and add its content to this repo's AGENTS.md (create AGENTS.md if it doesn't exist).
+```
+Go to https://raw.githubusercontent.com/life-itself/changelog/main/add-to-agents.md and add its content to this repo's AGENTS.md (create AGENTS.md if it doesn't exist).
+```
 
 That's it — the whole file at that URL is exactly what gets added, nothing to find or extract inside a bigger doc, nothing to paraphrase. It's the raw file URL, not the GitHub web page, so it's plain markdown in one fetch: works the same from a local session, a cloud session, or Codex, no checkout or auth needed since this repo is public.
 
