@@ -8,6 +8,18 @@ Go to https://raw.githubusercontent.com/life-itself/changelog/main/add-to-agents
 
 That's it — the whole file at that URL is exactly what gets added, nothing to find or extract inside a bigger doc, nothing to paraphrase. It's the raw file URL, not the GitHub web page, so it's plain markdown in one fetch: works the same from a local session, a cloud session, or Codex, no checkout or auth needed since this repo is public.
 
+## Updating a repo that already has it
+
+`add-to-agents.md` is pasted verbatim into each repo's `AGENTS.md`, so a change here doesn't propagate — re-sync each repo. Paste this into a project's coding agent:
+
+```
+Fetch https://raw.githubusercontent.com/life-itself/changelog/main/add-to-agents.md
+In this repo's AGENTS.md, find the existing "## Changelog" section and replace it
+wholesale with the fetched content. If there's no such section, append it.
+```
+
+Whole-block replace, not a diff, so the same snippet works for every future change to `add-to-agents.md` — no need to describe what changed. Only the embedded snippet needs this; `CONVENTION.md` is fetched fresh at drafting time and never needs a re-sync.
+
 ## Files
 
 - **[add-to-agents.md](add-to-agents.md)** — the short snippet, verbatim content for a repo's `AGENTS.md`. States what a changelog entry is and when to write one (skip trivial sessions), and only points to `CONVENTION.md` for the actual first entry or when the format's unclear — so a session never has to fetch the full spec just to decide whether to bother.
