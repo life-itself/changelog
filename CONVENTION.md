@@ -53,7 +53,7 @@ An entry that describes something a reader can actually go look at should link t
 
 At session-checkpoint time (end of a work session / handoff point) — the same moment a `NEXT.md` update happens in repos that use one.
 
-**Skip the entry if the session was trivial** — a typo fix, a failed experiment, pure research/reading, config fiddling with no visible outcome. Write one only when something a reader would actually care about shipped: a feature, a fix, a meaningful piece of content, a visible change. When genuinely unsure, err toward skipping rather than logging noise — a changelog that's mostly filler stops getting read.
+**Skip the entry if the session was trivial** — a typo fix, a failed experiment, pure research/reading, config fiddling with no visible outcome. Planning, research, or design alone do not qualify unless they are themselves a significant public deliverable. Drafting ahead of a ship is fine. Write one only when something a reader would actually care about shipped: a feature, a fix, a meaningful piece of content, a visible change. When genuinely unsure, err toward skipping rather than logging noise — a changelog that's mostly filler stops getting read.
 
 1. Did something changelog-worthy ship this session? (See threshold above — not every commit, not every session.)
 2. If yes: draft a new file, `changelog/YYYY-MM-DD-slug.md`.
