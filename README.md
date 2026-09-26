@@ -26,8 +26,15 @@ Whole-block replace, not a diff, so the same snippet works for every future chan
 - **[CONVENTION.md](CONVENTION.md)** — the full per-entry spec: folder/frontmatter format, image handling, linking to the live feature, the skip/weight judgment calls. This is what a project-repo agent reads. Deliberately doesn't cover what happens to entries afterward.
 - **[PUBLISHING.md](PUBLISHING.md)** — the separate, much-less-frequent concern of aggregating entries across projects: weekly roll-up and manual promote (social/newsletter/site). Read by the planning repo's `changelog-rollup` skill, not by a project-repo session — kept out of `CONVENTION.md` on purpose so drafting one entry never pulls this in.
 - **[MOTIVATION.md](MOTIVATION.md)** — the full situation/complication/question/hypothesis behind why this repo and this spec exist, self-contained (no need to check out the planning repo to follow the reasoning).
-- **[NEXT.md](NEXT.md)** — current checkpoint and backlog; links the open GitHub issues.
+- **Beads (`bd ready`, `bd list --all`)** — actions and backlog, migrated from `NEXT.md`. See [.beads/README.md](.beads/README.md) for sync and setup.
 - **`EXEMPLARS.md`** (not in this list on purpose) — reference changelogs (e.g. linear.app) used only while shaping this spec. Not linked from `CONVENTION.md`/`add-to-agents.md` and not meant for a project-repo agent to read.
+
+## Working on the convention
+
+The current convention requires new features or significant reader-facing changes;
+small changes only support a larger qualifying announcement. The
+[v2 design](docs/plans/2026-08-23-changelog-v2-design.md) is historical: its
+standalone small-work tier is superseded by `CONVENTION.md`.
 
 ## Why not published elsewhere
 
