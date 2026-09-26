@@ -1,19 +1,32 @@
 ---
-updated: 2026-08-23
+updated: 2026-09-26
 ---
 
 ## Current checkpoint
 
-- **Project:** Changelog Convention
-- **State:** v2 design landed (2026-08-23) — see [docs/plans/2026-08-23-changelog-v2-design.md](docs/plans/2026-08-23-changelog-v2-design.md). Prompted by reviewing real entries from a live project (Wilber Wiki) and finding four gaps: no tier for a bigger/richer entry, screenshots not reliably taken for visual work, no links from an entry back to the live feature, and a single `changelog.md` that doesn't scale. `CONVENTION.md`, `add-to-agents.md`, `PUBLISHING.md`, `README.md` all updated to a `changelog/` folder (one file per entry, `YYYY-MM-DD-slug.md`, `date`/`title`/`promote` frontmatter) with a third "something bigger" tier, a link-to-the-live-feature section, and stronger screenshot-judgment wording. Dev-only `EXEMPLARS.md` added (linear.app reference) — not part of the spec any project agent reads.
-- **Next:** Migrate `reasoncommons`'s existing single `changelog.md` into the new folder shape (deferred, out of scope for the v2 design itself — a separate step once that repo's file actually needs it), then live with v2 for real. The roll-up/promote skill has been fixture-tested but never run against a real weekly review, and now also needs re-checking against the frontmatter-based `promote` flag instead of the old HTML-comment marker.
-- **Context:** [MOTIVATION.md](MOTIVATION.md) for the full situation/complication/question/hypothesis; [CONVENTION.md](CONVENTION.md) (per-entry spec, what a project-repo agent reads) and [PUBLISHING.md](PUBLISHING.md) (roll-up + promote, what the planning-repo weekly review reads) are the current specs; [add-to-agents.md](add-to-agents.md) is the short snippet copied into project `AGENTS.md` files.
-- **Trial finding (2026-08-16):** the real entries produced in `reasoncommons` were too verbose for what they reported — a repo-gardening session (rebrand, README tidy, folder reorg) got a full title plus five bullets naming individual files, when the actual reader-facing news was one sentence. Added a "Calibrating detail" section to `CONVENTION.md` (skip / one-liner / full-feature tiers, before/after example), folded a shorter version into `add-to-agents.md`, retrofitted the reasoncommons AGENTS.md copy and condensed its entry as the worked example.
-- **Design added, then split out (2026-08-16):** weekly roll-up and manual-promote design (answering issues #2/#3) first landed inside `CONVENTION.md`, then got pulled into its own `PUBLISHING.md` — different audience (planning-repo weekly review, not a project-repo session drafting one entry) and different frequency (weekly, not per-session), so it shouldn't bloat the file every project-repo agent reads. The actual roll-up/promote steps now live as a skill, `~/src/me/planning/skills/changelog-rollup/SKILL.md`, which points back to `PUBLISHING.md` as the canonical spec — same pattern as `add-to-agents.md` → `CONVENTION.md`. Symlinked into `~/src/me/planning/.claude/skills/` and committed there.
-- **Fixture-tested (2026-08-16):** ran `changelog-rollup`'s SKILL.md against a mock fixture (fake `projects/*.md`, fake project changelogs, one project with no local checkout, one entry flagged `<!-- promote -->`) via two fresh test-agent passes, since a skill that's never been exercised is just a claim. First pass found five real gaps (no week-date derivation rule, cross-repo image references via relative path that don't resolve, no "condense to weight" spec, no promote-caption spec, unclear append-vs-create behavior) — fixed all five. Second pass, specifically exercising the append path, found two more (ambiguity over whether a promoted entry gets both a list bullet and a sub-heading, no stated location for the skip-note) — fixed those too. Still not run against a real weekly review with real project repos.
+The convention uses one file per entry in `changelog/`, with frontmatter,
+live links, and screenshots where useful. Standalone entries require a new
+feature or significant reader-facing change. Small changes may only support a
+larger announcement that qualifies on its own; the old one-liner tier is removed.
+The `AGENTS.md` snippet is now 110 words.
 
-## Backlog
+## Next
 
-- Nothing open right now — issues #1, #2, #3 closed 2026-08-16 once the trial + design work landed. Next backlog item is running the weekly roll-up for real (not just against the fixture) during an actual weekly review, and separately trying the manual-promote flow on a real flagged entry.
+- Re-sync the revised [snippet](add-to-agents.md) into repos that already use it;
+  see [README.md](README.md#updating-a-repo-that-already-has-it).
+- When next working on `reasoncommons`'s changelog, check whether its old single
+  `changelog.md` still needs migrating to the folder format.
+- Re-check the roll-up skill at `~/src/me/planning/skills/changelog-rollup/SKILL.md`
+  against frontmatter-based `promote` flags. Previous fixture tests used the old
+  HTML-comment marker; a real weekly review and manual-promote trial remain untested.
 
-Deliberately deferred (see CONVENTION.md "Not doing yet" — don't file issues for these until the manual version proves the pattern): R2/image hosting, GitHub Action automation for the roll-up, auto-posting to social media, remote-fetch (non-local-checkout) reading for the roll-up.
+## References
+
+- [CONVENTION.md](CONVENTION.md): current per-entry rules.
+- [PUBLISHING.md](PUBLISHING.md): weekly roll-up and manual promotion.
+- [MOTIVATION.md](MOTIVATION.md): rationale.
+- [v2 design](docs/plans/2026-08-23-changelog-v2-design.md): historical design;
+  its small-work tier is superseded by the current convention.
+
+Deferred until the manual workflow proves useful: external image hosting,
+roll-up automation, social auto-posting, and remote fetching for roll-ups.

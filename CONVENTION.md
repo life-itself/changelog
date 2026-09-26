@@ -53,7 +53,13 @@ An entry that describes something a reader can actually go look at should link t
 
 At session-checkpoint time (end of a work session / handoff point) — the same moment a `NEXT.md` update happens in repos that use one.
 
-**Skip the entry if the session was trivial** — a typo fix, a failed experiment, pure research/reading, config fiddling with no visible outcome. Planning, research, or design alone do not qualify unless they are themselves a significant public deliverable. Drafting ahead of a ship is fine. Write one only when something a reader would actually care about shipped: a feature, a fix, a meaningful piece of content, a visible change. When genuinely unsure, err toward skipping rather than logging noise — a changelog that's mostly filler stops getting read.
+**Default to no entry at the end of a routine session.** Write a standalone entry only for a new feature or a comparably significant reader-facing change: a meaningful change in behaviour, a fix to something materially broken for users, or a significant new piece of public content. A visible difference alone is not enough.
+
+**Skip visual polish, alignment/spacing tweaks, typo fixes, config tidying, internal cleanup, renames, reorganisations, and other small fixes.** These do not get standalone entries, even a single sentence. Several small changes together do not become changelog-worthy just because the session was busy.
+
+**Smaller changes can accompany a bigger announcement.** An entry about a substantial feature, milestone, or release may include relevant smaller improvements and bug fixes as supporting detail or bullets. The main announcement must qualify on its own; don't create an entry just to collect small changes.
+
+Skip failed experiments and planning/research/design unless the work is itself a significant public deliverable. Drafting ahead of a ship is fine. When unsure, skip the entry.
 
 1. Did something changelog-worthy ship this session? (See threshold above — not every commit, not every session.)
 2. If yes: draft a new file, `changelog/YYYY-MM-DD-slug.md`.
@@ -63,52 +69,19 @@ AI drafts the entry from what actually happened in the session; a human skims/ed
 
 ## Calibrating detail
 
-The failure mode in practice isn't "logged something trivial" (the Trigger threshold above catches that) — it's **logging something real at the wrong weight**. A repo-gardening session (rebrand, tidy the README, reorganize a folder) genuinely shipped something, so it clears the skip threshold, but it's not a feature — it doesn't deserve a title plus five bullets walking through every file touched. Match the entry's weight to what a reader outside the session would actually care about, not to how much work it took or how many files changed:
+First decide whether the work clears the Trigger threshold. Only then choose how much detail it needs. There is no standalone "small work" tier. Match the entry's weight to what a reader outside the session would care about, not how much work it took or how many files changed:
 
-- **Something bigger** (a substantial feature, a milestone, a piece of work with real depth — the kind of thing linear.app's changelog gives a full writeup): multiple paragraphs and/or bullets, more than one link if more than one thing is covered, image(s) where relevant. Judgment call on when a session clears this bar — most sessions won't. Don't pad an ordinary entry up to this tier for the sake of variety; reserve it for entries that genuinely have this much to say.
-- **A real feature, fix, or piece of content** (something a user or reader would notice): title, one or two sentences written for a reader, screenshot/video if something visual shipped, link to the live feature (see above). This is the default tier for anything that clears the skip threshold and isn't small stuff.
-- **Small but real stuff** (internal cleanup, rename, reorg, tidying, small fixes with no user-visible behavior change): one plain sentence, no title needed, no bullets, no screenshot. If several small things happened in one session, that's still one sentence combining them — not a bullet per thing.
-- **Nothing worth a reader's attention:** skip it, per Trigger above.
+- **A qualifying feature or significant change:** title, one or two sentences written for a reader, screenshot/video if something visual shipped, link to the live feature (see above). This is the default for an ordinary qualifying session.
+- **Something bigger** (a substantial feature, milestone, or release with several meaningful changes): multiple paragraphs and/or bullets, more than one link if more than one thing is covered, images where relevant. Relevant smaller improvements and bug fixes can sit alongside the main announcement. Don't pad an ordinary entry to this length or list every incidental cleanup.
+- **Only small changes:** no entry.
 
-Don't let the entry mirror the session's internal structure — the reader doesn't care that branding, the README, and a folder reorg were three separate steps; they care that the site got tidied up. Describe the outcome, not the implementation. If you're drafting bullets that name specific files, config keys, or "moved X into Y" — stop and ask whether that's release-note material or just commit-message detail that belongs in `git log`, not `changelog.md`.
+Describe reader-facing outcomes, not the session's internal steps. File names, config keys, and internal moves usually belong in `git log`, not the changelog.
 
-**Before/after, from a real session:**
+**Examples of the threshold:**
 
-```markdown
-<!-- Before: implementation-log style, five bullets naming files and internal moves -->
-<!-- changelog/2026-08-16-repo-gardening.md -->
----
-date: 2026-08-16
-title: Repo gardening — Reason Commons branding, clean landing page, tidy explainers
-promote: false
----
-
-A housekeeping session with no new content, but the site now looks like a project
-rather than a workspace...
-
-- **Rebranded to Reason Commons.** Site title and README header still said "Issue
-  Trees & Logical Thinking Process"; both now match the naming decision recorded in
-  `docs/brand-and-domain-naming.md`. Stale links to the old repo name were fixed
-  across `config.json`, the dashboard manifest and the skill docs.
-- **README is a landing page now.** ...
-- **`explainers/` reorganised.** ...
-- **Root docs lowercased** ...
-- **Two working conventions recorded in `AGENTS.md`** ...
-```
-
-```markdown
-<!-- After: one sentence, reader's-eye view of what changed -->
-<!-- changelog/2026-08-16-repo-gardening.md -->
----
-date: 2026-08-16
-title: Repo gardening
-promote: false
----
-
-Rebranded to Reason Commons, turned the README into a real landing page, and tidied
-the explainers folder and docs — no new content, but the site now reads as a
-finished project rather than a workspace.
-```
+- A session rebrands the repo, tidies the README, reorganises folders, and adjusts page spacing: **skip the entry**, rather than condensing the work into a one-liner.
+- A session ships a new search feature: **write a short entry** explaining what readers can now find, with a link and a screenshot where useful.
+- A substantial search release adds filters and saved searches and also fixes broken result links: **write a broader entry**, leading with the new capabilities and including the link fix as a supporting bullet. The release qualifies without the smaller fix.
 
 ## Publishing
 
