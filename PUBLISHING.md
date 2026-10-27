@@ -1,7 +1,5 @@
 # Publishing: weekly roll-up and manual promote
 
-> Archived copy. The maintained publishing guidance is in [life-itself/skills](https://github.com/life-itself/skills/blob/main/skills/changelog/PUBLISHING.md).
-
 What happens to changelog entries *after* they land in a project's own `changelog.md` (see [CONVENTION.md](CONVENTION.md) for that part). This is a different concern with a different audience and a different rhythm:
 
 - **Audience:** whoever's doing the personal/Life Itself weekly review in the planning repo (`~/src/me/planning`) — not a project-repo agent drafting one entry. A project repo never needs to read this file.
