@@ -1,5 +1,7 @@
 ## Changelog
 
+> Archived copy. Fetch the current snippet from [life-itself/skills](https://raw.githubusercontent.com/life-itself/skills/main/skills/changelog/add-to-agents.md).
+
 At session end, only log new features or significant reader-facing changes
 (behaviour, fixes to materially broken functionality, or public content).
 Skip polish, tidying, and small fixes as standalone entries; include them only

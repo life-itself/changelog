@@ -1,5 +1,7 @@
 # Changelog Convention
 
+> Archived copy. The maintained convention is in [life-itself/skills](https://github.com/life-itself/skills/blob/main/skills/changelog/CONVENTION.md).
+
 How any repo keeps a changelog — text and visual, same folder, same trigger. Quick-and-dirty v1: meant to be trialed and revised, not final.
 
 The short version that goes into a repo's `AGENTS.md` lives in its own file, [add-to-agents.md](add-to-agents.md) — copy its whole content in, don't paraphrase this longer doc. This file is the full spec that snippet points to once an entry's actually being drafted.
